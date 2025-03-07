@@ -8,12 +8,27 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-    public $paginate = 3;
-    public $search;
     use WithPagination;
+
+    public $paginate = 5;
+    public $search;
+
+    protected $updatesQueryString = [
+        ['search' => ['except' => '']],
+    ];
+
+
+    public function mount()
+    {
+        $this->search = request()->query('search', $this->search);
+    }
     public function render()
     {
-        $products = Product::paginate($this->paginate);
-        return view('livewire.product.index', ['products' => $products]);
+        return view('livewire.product.index', [
+            'products' => $this->search === null ? //pengecekan dengan operasi ternari jika kolom search ada isinya
+                Product::latest()->paginate($this->paginate) :
+                Product::latest()->where('title', 'like', '%' . $this->search . '%')
+                ->paginate($this->paginate)
+        ]);
     }
 }
