@@ -8,10 +8,12 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
+    public $paginate = 3;
+    public $search;
     use WithPagination;
     public function render()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate($this->paginate);
         return view('livewire.product.index', ['products' => $products]);
     }
 }
