@@ -35,5 +35,8 @@ class Create extends Component
         // dd($product);
 
         // $this->emit('productStored');
+
+        // notifikasi data berhasil ditambahkan
+        session()->flash('pesan', 'data berhasil ditambahkan');
     }
 }

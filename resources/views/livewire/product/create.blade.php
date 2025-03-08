@@ -6,6 +6,11 @@
                 <a href="{{ route('admin.product') }}" class="btn btn-sm btn-secondary">Back to Products</a>
             </div>
             <div class="card-body">
+                @if (session()->has('pesan'))
+                    <div class="alert alert-success">
+                        {{ session('pesan') }}
+                    </div>
+                @endif
                 <form wire:submit.prevent="store" method="POST" enctype="multipart/form-data">
 
                     <div class="form-group">
