@@ -12,11 +12,23 @@
 
                         <div class="form-row">
                             <div class="col">
-                                <input wire:model="title" type="text" class="form-control" placeholder="Title">
+                                <input wire:model="title" type="text"
+                                    class="form-control @error('title') is-invalid @enderror" placeholder="Title">
+                                @error('title')
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
                             <div class="col">
-                                <input wire:model="price" type="text" class="form-control" placeholder="Price">
+                                <input wire:model="price" type="text"
+                                    class="form-control @error('price') is-invalid @enderror" placeholder="Price">
+                                @error('title')
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -26,8 +38,14 @@
 
                         <div class="form-row">
                             <div class="col">
-                                <input wire:model="description" type="text" class="form-control"
+                                <input wire:model="description" type="text"
+                                    class="form-control @error('description') is-invalid @enderror"
                                     placeholder="Description">
+                                @error('title')
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -40,6 +58,11 @@
                                 <div class="form-group">
                                     <label for="">Image</label>
                                     <input wire:model="image" type="file" class="form-control-file" id="image">
+                                    @error('image')
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
