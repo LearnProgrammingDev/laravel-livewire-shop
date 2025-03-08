@@ -12,11 +12,21 @@ class Index extends Component
 
     public $paginate = 5;
     public $search;
+    public $formvisible;
+
 
     protected $updatesQueryString = [
         ['search' => ['except' => '']],
     ];
 
+    // protected $listeners = [
+    //     'formClose' => 'formCloseHandler'
+    // ];
+
+    // public function formCloseHandler()
+    // {
+    //     $this->formvisible = false;
+    // }
 
     public function mount()
     {

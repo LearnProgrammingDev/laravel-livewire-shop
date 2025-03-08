@@ -1,8 +1,15 @@
 <div class="container">
+    {{-- @livewire('product.create') --}}
+    @if ($formvisible)
+        @livewire('product.create')
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Product') }}</div>
+                <div class="card-header">
+                    Product
+                    <a href="{{ route('admin.product.create') }}" class="btn btn-sm btn-primary">Create</a>
+                </div>
 
                 <div class="card-body">
                     <div class="row">
