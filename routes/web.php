@@ -27,3 +27,6 @@ Route::livewire('/admin/product', 'product.index')
 Route::livewire('/admin/product/create', 'product.create')
     ->name('admin.product.create')
     ->middleware('auth');
+Route::livewire('/admin/product/update{id}', 'product.update')
+    ->name('admin.product.update')
+    ->middleware('auth');
