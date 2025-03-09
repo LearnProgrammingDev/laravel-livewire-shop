@@ -1,8 +1,8 @@
 <div class="container">
     {{-- @livewire('product.create') --}}
-    @if ($formvisible)
+    {{-- @if ($formvisible)
         @livewire('product.create')
-    @endif
+    @endif --}}
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -12,6 +12,17 @@
                 </div>
 
                 <div class="card-body">
+                    @if (session()->has('pesan'))
+                        <div class="alert alert-success">
+                            {{ session('pesan') }}
+                        </div>
+                    @endif
+
+                    @if (session()->has('hapus'))
+                        <div class="alert alert-danger">
+                            {{ session('hapus') }}
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col">
                             <select wire:model="paginate" name="" id=""

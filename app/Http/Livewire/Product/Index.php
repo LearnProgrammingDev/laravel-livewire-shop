@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Product;
 use App\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Storage;
 
 class Index extends Component
 {
@@ -40,5 +41,18 @@ class Index extends Component
                 Product::latest()->where('title', 'like', '%' . $this->search . '%')
                 ->paginate($this->paginate)
         ]);
+    }
+
+
+    public function deleteProduct($productId)
+    {
+        $product = Product::find($productId);
+
+        if ($product->image) {
+            Storage::disk('public')->delete($product->image);
+        }
+
+        $product->delete();
+        session()->flash('hapus', 'Product was deleted!');
     }
 }
