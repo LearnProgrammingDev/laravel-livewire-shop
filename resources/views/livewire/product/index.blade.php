@@ -49,8 +49,8 @@
                                     <td>{{ $product->title }}</td>
                                     <td>Rp{{ number_format($product->price, 2, ',', '.') }}</td>
                                     <td>
-                                        <button><a href="{{ route('admin.product.update', $product->id) }}"
-                                                class="btn btn-sm btn-info text-white">Edit</a></button>
+                                        <a href="{{ route('admin.product.update', $product->id) }}"
+                                            class="btn btn-sm btn-info text-white">Edit</a>
                                         <button wire:click="deleteProduct({{ $product->id }})"
                                             class="btn btn-sm btn-danger">Delete</button>
                                     </td>
