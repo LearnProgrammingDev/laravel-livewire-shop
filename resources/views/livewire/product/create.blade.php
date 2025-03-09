@@ -51,6 +51,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
                             </div>
                         </div>
 
@@ -68,6 +69,9 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    @if ($image)
+                                        <img src="{{ $image->temporaryUrl() }}" alt="" height="200">
+                                    @endif
                                 </div>
                             </div>
                         </div>
