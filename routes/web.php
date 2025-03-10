@@ -30,3 +30,5 @@ Route::livewire('/admin/product/create', 'product.create')
 Route::livewire('/admin/product/update{id}', 'product.update')
     ->name('admin.product.update')
     ->middleware('auth');
+Route::livewire('/shop', 'shop.index')
+    ->name('shop.index');
