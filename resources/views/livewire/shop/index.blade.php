@@ -13,7 +13,7 @@
             <div class="col-sm-12 col-xs-12 col-md-4 col-lg-3 mb-4">
                 <div class="card h-80">
                     <img class="card-img-top img-fluid"
-                        src="{{ $product->image ? asset('/storage/' . $product->image) : 'http://placehold.it/150x150' }}"
+                        src="{{ $product->image ? asset('/storage/' . $product->image) : asset('/images/default-product.png') }}"
                         alt="">
                     <div class="card-img-overlay" style="background-color: rgba(0,0,0,0.5);">
                         <h5 class="text-white">
