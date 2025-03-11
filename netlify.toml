@@ -3,5 +3,5 @@
   publish = "public"
 
 [build.environment]
-    NODE_VERSION = "14" # sesuaikan dengan versi Node yang Anda gunakan
+    NODE_VERSION = "22" # sesuaikan dengan versi Node yang Anda gunakan
     PHP_VERSION = "7.4" # sesuaikan dengan versi PHP yang dibutuhkan Laravel 7
