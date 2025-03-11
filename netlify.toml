@@ -1,7 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "public"
-
+  command = "mkdir -p dist && npm run build"
+  publish = "dist"
+  
 [build.environment]
-    NODE_VERSION = "22" # sesuaikan dengan versi Node yang Anda gunakan
-    PHP_VERSION = "7.4" # sesuaikan dengan versi PHP yang dibutuhkan Laravel 7
+  NODE_VERSION = "22"
